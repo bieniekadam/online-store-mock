@@ -1,6 +1,6 @@
 export interface Product {
   id: number;
-  category: string;
+  category: ProductCategory;
   title: string;
   description: string;
   image: string;
@@ -11,4 +11,17 @@ export interface Product {
 export interface Rating {
   count: number;
   rate: number;
+}
+
+export type ProductCategory =
+  | "men's clothing"
+  | "women's clothing"
+  | "jewelery"
+  | "electronics";
+
+export enum ProductCategoryPaths {
+  jewelery = "jewelery",
+  electronics = "electronics",
+  women = "women's clothing",
+  men = "men's clothing",
 }

@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import axios, { AxiosResponse } from "axios";
-import { SingleProductCard } from "./SingleProductCard/singleProductCard";
 import { Product } from "./interfaces/product.interface";
 import { TopBar } from "./TopBar/TopBar";
+import { Routes, Route } from "react-router-dom";
+import { Men } from "./components/Men";
+import { Electronics } from "./components/Electronics";
+import { Jewelery } from "./components/Jewelery";
+import { Women } from "./components/Women";
+import { All } from "./components/All";
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -24,23 +28,16 @@ function App() {
       });
   }, []);
 
-  console.log(products);
-
   return (
     <div className="App">
       <TopBar />
-      <div className="products-grid">
-        {products.map((product: Product) => (
-          <SingleProductCard
-            title={product.title}
-            category={product.category}
-            description={product.description}
-            image={product.image}
-            rating={product.rating}
-            price={product.price}
-          />
-        ))}{" "}
-      </div>
+      <Routes>
+        <Route path="/" element={<All />} />
+        <Route path="/men" element={<Men />} />
+        <Route path="/women" element={<Men />} />
+        <Route path="/jewelery" element={<Men />} />
+        <Route path="/electronics" element={<Men />} />
+      </Routes>
     </div>
   );
 }

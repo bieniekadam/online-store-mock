@@ -2,13 +2,14 @@
 
 .App {
   text-align: center;
+  text-decoration: none !important;
 }
 
 .products-grid {
   text-align: center;
   display: inline-grid;
   font-family: "Bebas Neue";
-  grid-template-columns: 18rem 18rem 18rem 18rem;
+  grid-template-columns: 20vw 20vw 20vw 20vw;
   gap: 20px;
   padding: 110px;
 }

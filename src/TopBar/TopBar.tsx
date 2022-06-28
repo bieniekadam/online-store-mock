@@ -1,15 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./TopBar.css";
 
 export function TopBar() {
   return (
     <div className="top-bar-wrapper">
-      <div className="top-bar-title">the everything store</div>
+      <Link to="/" className="link">
+        <div className="top-bar-title">THE ONLINE STORE</div>
+      </Link>
       <div className="categories">
-        <div className="men category-item">MEN</div>
-        <div className="women category-item">WOMEN</div>
-        <div className="electronics category-item">ELECTRONICS</div>
-        <div className="jewellery category-item">JEWELERY</div>
+        <Link className="link" to="men">
+          <div className="category-item">MEN</div>
+        </Link>
+        <Link className="link" to="women">
+          <div className="category-item">WOMEN</div>
+        </Link>
+        <Link className="link" to="electronics">
+          <div className="category-item">ELECTRONICS</div>
+        </Link>
+        <Link className="link" to="jewelery">
+          <div className="category-item">JEWELERY</div>
+        </Link>
       </div>
 
       <img src="shopping-cart.svg" className="shopping-cart"></img>
