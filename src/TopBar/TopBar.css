@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+.top-bar-wrapper {
+  width: 100vw;
+  height: 50px;
+  background-color: rgba(222, 222, 222, 0.87);
+  display: flex;
+  align-items: center;
+  position: fixed;
+  justify-content: space-around;
+}
+
+.top-bar-title {
+  font-family: "EB Garamond", serif;
+  font-size: 30px;
+  font-weight: 500;
+  width: fit-content;
+  min-width: 100px;
+  letter-spacing: 0.05rem;
+  color: black;
+  padding: 10px;
+}
+
+.link {
+  text-decoration: none !important;
+}
+
+.categories {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 4vw;
+}
+
+.category-item {
+  color: rgba(72, 72, 72, 0.844);
+  transition: 0.2s;
+  font-size: 14px;
+  letter-spacing: 0.1rem;
+  padding: 15px;
+}
+
+.category-item:hover {
+  transition: 0.3s;
+  cursor: pointer;
+  color: black;
+  text-shadow: 0px 0px 10px rgb(174, 174, 174);
+}
+
+.shopping-cart {
+  width: 35px;
+  height: auto;
+}
+
+.shopping-cart:hover {
+  cursor: pointer;
+}
