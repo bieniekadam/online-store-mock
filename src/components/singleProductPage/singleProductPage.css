@@ -1,0 +1,51 @@
+.background {
+  display: flex;
+  justify-content: center;
+  font-family: "EB Garamond", serif;
+}
+
+.single-product-page {
+  display: flex;
+  flex-direction: row;
+  padding-top: 100px;
+  text-align: left;
+  width: 1024px;
+  justify-content: center;
+}
+
+.product-image {
+  width: 400px;
+  height: auto;
+  margin: 10px;
+}
+
+.description {
+  width: 600px;
+  line-height: 1.8rem;
+  padding: 40px;
+  font-size: 16px;
+}
+
+.single-product-page-title {
+  font-size: 50px;
+  padding: 40px;
+  padding-bottom: 20px;
+  line-height: 4rem;
+}
+
+.single-product-page-rating {
+  font-size: 16px;
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+.single-product-page-add-to-cart-button {
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
+.single-product-page-price {
+  margin-left: 40px;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
