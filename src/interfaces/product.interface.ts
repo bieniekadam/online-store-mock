@@ -25,3 +25,5 @@ export enum ProductCategoryPaths {
   women = "women's clothing",
   men = "men's clothing",
 }
+
+export type PathCategory = keyof typeof ProductCategoryPaths;

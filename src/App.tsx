@@ -1,42 +1,51 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import axios, { AxiosResponse } from "axios";
+import "semantic-ui-css/semantic.min.css";
 import { Product } from "./interfaces/product.interface";
-import { TopBar } from "./TopBar/TopBar";
-import { Routes, Route } from "react-router-dom";
-import { Men } from "./components/Men";
-import { Electronics } from "./components/Electronics";
-import { Jewelery } from "./components/Jewelery";
-import { Women } from "./components/Women";
-import { All } from "./components/All";
+import { TopBar } from "./components/TopBar/TopBar";
+import { Routes, Route, useParams } from "react-router-dom";
+import { AllProductsPage } from "./components/allProductsPage/AllProductsPage";
+import { SingleProductPage } from "./components/singleProductPage/SingleProductPage";
+import { Cart } from "./components/cart/Cart";
+import axios from "axios";
 
 function App() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [categories, setCategories] = useState();
+  const [allProducts, setAllProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     axios.get("https://fakestoreapi.com/products").then((response) => {
-      setProducts(response.data);
+      setAllProducts(response.data);
     });
-  }, []);
-
-  useEffect(() => {
-    axios
-      .get("https://fakestoreapi.com/products/categories")
-      .then((response: AxiosResponse) => {
-        setCategories(response.data);
-      });
   }, []);
 
   return (
     <div className="App">
       <TopBar />
+
       <Routes>
-        <Route path="/" element={<All />} />
-        <Route path="/men" element={<Men />} />
-        <Route path="/women" element={<Men />} />
-        <Route path="/jewelery" element={<Men />} />
-        <Route path="/electronics" element={<Men />} />
+        <Route
+          path="/product/:id"
+          element={<SingleProductPage allProducts={allProducts} />}
+        />
+        <Route path="/" element={<AllProductsPage apiData={allProducts} />} />
+        <Route
+          path="/men"
+          element={<AllProductsPage apiData={allProducts} />}
+        />
+        <Route
+          path="/women"
+          element={<AllProductsPage apiData={allProducts} />}
+        />
+        <Route
+          path="/jewelery"
+          element={<AllProductsPage apiData={allProducts} />}
+        />
+        <Route
+          path="/electronics"
+          element={<AllProductsPage apiData={allProducts} />}
+        />
+        {/* <Route path="/singleproduct" element={<SingleProductPage />} /> */}
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   );

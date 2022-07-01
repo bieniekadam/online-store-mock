@@ -5,6 +5,7 @@ export interface SingleProductCardProps {
   image: string;
   rating: Rating;
   price: string;
+  id: number;
 }
 
 export interface Rating {

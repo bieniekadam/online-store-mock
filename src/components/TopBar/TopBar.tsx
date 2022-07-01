@@ -10,20 +10,21 @@ export function TopBar() {
       </Link>
       <div className="categories">
         <Link className="link" to="men">
-          <div className="category-item">MEN</div>
+          <div className="single-category">MEN</div>
         </Link>
         <Link className="link" to="women">
-          <div className="category-item">WOMEN</div>
+          <div className="single-category">WOMEN</div>
         </Link>
         <Link className="link" to="electronics">
-          <div className="category-item">ELECTRONICS</div>
+          <div className="single-category">ELECTRONICS</div>
         </Link>
         <Link className="link" to="jewelery">
-          <div className="category-item">JEWELERY</div>
+          <div className="single-category">JEWELERY</div>
         </Link>
       </div>
-
-      <img src="shopping-cart.svg" className="shopping-cart"></img>
+      <Link className="link" to="cart">
+        <img src="shopping-bag.svg" className="shopping-cart"></img>
+      </Link>
     </div>
   );
 }
