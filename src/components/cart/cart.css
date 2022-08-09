@@ -1,4 +1,4 @@
-.background {
+.cart-background {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,7 +8,8 @@
 
 .products-in-cart {
   width: 600px;
-  height: 70vh;
+  height: fit-content;
+  background-color: rgba(255, 255, 255, 0.517);
   margin-top: 100px;
 }
 
@@ -17,39 +18,85 @@
   flex-direction: row;
   text-align: left;
   width: 600px;
-  justify-content: center;
+  justify-content: space-between;
   height: 100px;
   align-items: center;
-  border: 1px solid rgb(198, 198, 198);
+  border: 1px solid rgb(217, 217, 217);
   border-radius: 3px;
   transition: 0.2s;
 }
 
 .single-cart-product:hover {
-  box-shadow: 0px 0px 4px 0px rgb(170, 170, 170);
+  border: 0 solid rgb(255, 255, 255);
   transition: 0.2s;
+}
+
+.cart-product-image-container {
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trash-can {
+  max-width: 23px;
+  max-height: auto;
+}
+
+.trash-can:hover {
   cursor: pointer;
 }
 
-.image {
+.trash-container {
+  width: 40px;
   height: 100%;
-  width: auto;
-  padding: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.description {
+.cart-product-image {
+  max-height: 100px;
+  width: auto;
+  padding: 7px;
+  max-width: 100px;
+}
+
+.cart-product-description {
   width: 600px;
   line-height: 1.8rem;
   padding: 40px;
   font-size: 16px;
 }
 
-.title {
+.cart-product-title {
   font-size: 16px;
-  padding: 40px;
+  width: 300px;
+  text-align: left;
 }
 
-.price {
+.cart-product-price {
   font-size: 20px;
   margin-left: 40px;
+  width: 80px;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.price-sum-wrapper {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  width: 600px;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  border: 1px solid rgb(217, 217, 217);
+  padding: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.38);
+  padding-left: 30px;
+  padding-right: 20px;
 }

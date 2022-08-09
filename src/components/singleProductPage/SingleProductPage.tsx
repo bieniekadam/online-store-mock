@@ -1,10 +1,10 @@
 import "./singleProductPage.css";
 import React, { useEffect, useState } from "react";
-import Popup from "../popup/Popup";
 import { useParams } from "react-router-dom";
 
 import { SingleProductPageProps } from "./SingleProductPageProps.interface";
 import { Product } from "../../interfaces/product.interface";
+import { Button } from "semantic-ui-react";
 
 export function SingleProductPage(props: SingleProductPageProps) {
   const [selectedProduct, setSelectedProduct] = useState<Product>(
@@ -24,7 +24,7 @@ export function SingleProductPage(props: SingleProductPageProps) {
   return (
     <div className="background">
       <div className="single-product-page">
-        <div className="image">
+        <div className="single-product-page-image-container">
           <img src={selectedProduct.image} className="product-image"></img>
         </div>
         <div className="text">
@@ -41,8 +41,11 @@ export function SingleProductPage(props: SingleProductPageProps) {
           <div className="single-product-page-price">
             € {selectedProduct.price}{" "}
           </div>
-          <div className="single-product-page-add-to-cart-button">
-            <Popup />
+          <div
+            className="single-product-page-add-to-cart-button"
+            onClick={() => props.addToCart(selectedProduct)}
+          >
+            <Button>Add to Cart</Button>
           </div>
         </div>
       </div>
