@@ -1,0 +1,11 @@
+.single-cart-product {
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+  justify-content: center;
+  height: 100px;
+  align-items: center;
+  border: 1px solid rgb(198, 198, 198);
+  border-radius: 3px;
+  transition: 0.2s;
+}

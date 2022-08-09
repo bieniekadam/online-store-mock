@@ -5,12 +5,14 @@
 .App {
   text-align: center;
   text-decoration: none !important;
+  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+  min-height: 100vh;
 }
 
 .products-grid {
   text-align: center;
   display: inline-grid;
-  grid-template-columns: 20vw 20vw 20vw 20vw;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 2fr));
   gap: 20px;
   padding: 110px;
 }

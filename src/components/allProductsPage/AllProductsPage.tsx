@@ -15,11 +15,11 @@ export function AllProductsPage(props: AllProductsPageProps) {
     const categoryFromPath = window.location.pathname.slice(1);
 
     if (categoryFromPath === "") {
-      setProducts(props.apiData);
+      setProducts(props.allProductsResponse);
       return;
     }
 
-    const filtered = props.apiData.filter((product: Product) => {
+    const filtered = props.allProductsResponse.filter((product: Product) => {
       return (
         product.category ===
         ProductCategoryPaths[categoryFromPath as PathCategory]
@@ -27,7 +27,7 @@ export function AllProductsPage(props: AllProductsPageProps) {
     });
 
     setProducts(filtered);
-  }, [window.location.pathname, props.apiData]);
+  }, [window.location.pathname, props.allProductsResponse]);
 
   return (
     <div className="products-grid">

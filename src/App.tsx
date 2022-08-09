@@ -11,6 +11,13 @@ import axios from "axios";
 
 function App() {
   const [allProducts, setAllProducts] = useState<Product[]>([]);
+  const [productsInCart, setProductsInCart] = useState<Product[]>([]);
+
+  const addToCart = (product: Product) => {
+    const newCart = [...productsInCart];
+    newCart.push(product);
+    setProductsInCart(newCart);
+  };
 
   useEffect(() => {
     axios.get("https://fakestoreapi.com/products").then((response) => {
@@ -25,27 +32,37 @@ function App() {
       <Routes>
         <Route
           path="/product/:id"
-          element={<SingleProductPage allProducts={allProducts} />}
+          element={
+            <SingleProductPage
+              allProducts={allProducts}
+              addToCart={addToCart}
+            />
+          }
         />
-        <Route path="/" element={<AllProductsPage apiData={allProducts} />} />
+        <Route
+          path="/"
+          element={<AllProductsPage allProductsResponse={allProducts} />}
+        />
         <Route
           path="/men"
-          element={<AllProductsPage apiData={allProducts} />}
+          element={<AllProductsPage allProductsResponse={allProducts} />}
         />
         <Route
           path="/women"
-          element={<AllProductsPage apiData={allProducts} />}
+          element={<AllProductsPage allProductsResponse={allProducts} />}
         />
         <Route
           path="/jewelery"
-          element={<AllProductsPage apiData={allProducts} />}
+          element={<AllProductsPage allProductsResponse={allProducts} />}
         />
         <Route
           path="/electronics"
-          element={<AllProductsPage apiData={allProducts} />}
+          element={<AllProductsPage allProductsResponse={allProducts} />}
         />
-        {/* <Route path="/singleproduct" element={<SingleProductPage />} /> */}
-        <Route path="/cart" element={<Cart />} />
+        <Route
+          path="/cart"
+          element={<Cart productsInCart={productsInCart} />}
+        />
       </Routes>
     </div>
   );
